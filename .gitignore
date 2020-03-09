@@ -21,5 +21,6 @@ Colleen
 # Debug files
 *.dSYM/
 
-# Kernel Module Compile Results
+# Test and sandbox files
 tmp_*
+*sandbox*
