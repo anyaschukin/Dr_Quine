@@ -15,8 +15,14 @@
 
 # Executables
 Colleen
+Grace
+Sully
 *.exe
 *.out
+
+# Output files
+Grace_kid.*
+Sully_*
 
 # Debug files
 *.dSYM/
