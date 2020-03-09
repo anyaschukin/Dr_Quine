@@ -1,0 +1,25 @@
+# System
+.DS_Store
+
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+Colleen
+*.exe
+*.out
+
+# Debug files
+*.dSYM/
+
+# Kernel Module Compile Results
+tmp_*
