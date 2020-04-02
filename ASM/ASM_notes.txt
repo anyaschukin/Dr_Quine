@@ -1,0 +1,34 @@
+
+{} We use Intel, not AT&T, syntax at 42. So the instructions right Right -> Left
+
+{} Under the hood, when a program is compiled, the compiler converts the source file into object byte code. 
+This byte code (sometimes called object code) is mnemonic instructions that only your computer architecture understands. 
+Traditionally, these files have an .OBJ extension.
+
+{} The linker links your OBJ file with any standard libraries your program references or other OBJ files. 
+
+{} The text section is used for keeping the actual code.
+
+{} global _start, which tells the kernel where the program execution begins.
+
+{} Register rax is traditional the return
+
+-----------------
+
+nasm turns the .s file into a .o file, gcc turns the .o into a binary
+macho64 is the syntax we're using
+
+RUN COLLEEN
+nasm -f macho64 Colleen.s; gcc Colleen.o -o Colleen; ./Colleen > tmp_Colleen ; diff tmp_Colleen Colleen.s
+
+RUN GRACE
+nasm -f macho64 Grace.s; gcc Grace.o -o Grace; ./Grace; diff Grace.s Grace_kid.s
+
+
+-----------------
+GRACE NOTES:
+
+%1$c - quotes
+%2$c - NL
+%3$s - code string
+%4$c - percent
