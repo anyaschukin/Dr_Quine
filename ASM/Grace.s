@@ -41,13 +41,3 @@ exit:
 %endmacro
 
 RUN
-
-
-NOTES:
-
-%1$c - quotes
-%2$c - NL
-%3$s - code string
-%4$c - percent
-
-; nasm -f macho64 Grace.s; gcc Grace.o -o Grace; ./Grace; diff Grace.s Grace_kid.s
