@@ -18,17 +18,19 @@ extern _system
 _main:
 	enter 32, 0
 
-	mov r10, i
+	mov r10, num
 	cmp r10, 0
 	jle exit
+	dec r10 ; dunno if this will work
 
-    ; push rbp
-    ; mov rbp, rsp
+; NEED TO DECREMENT i
+	; mov rdx, [rel num]
+	; dec rdx
 
-spawn:
+child:
 	lea rdi, [rsp]
 	lea rsi, [rel filename]
-	mov rdx, i
+	mov rdx, num
 	call _asprintf
 
 open:
@@ -38,7 +40,6 @@ open:
     mov rax, SYS_OPEN
     syscall
 
-; multiply boi
 write:
     mov rdi, rax
 	lea rsi, [rel code]
@@ -48,6 +49,7 @@ write:
     mov r9, 37
 	call _asprintf
 
+; multiply boi
 execute:
 	mov rdi, [rsp + 8]
 	call _system
