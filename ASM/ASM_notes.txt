@@ -24,6 +24,8 @@ nasm -f macho64 Colleen.s; gcc Colleen.o -o Colleen; ./Colleen > tmp_Colleen ; d
 RUN GRACE
 nasm -f macho64 Grace.s; gcc Grace.o -o Grace; ./Grace; diff Grace.s Grace_kid.s
 
+RUN SULLY
+nasm -f macho64 Sully.s; gcc Sully.o -o Sully; ./Sully; ls -al | grep Sully | wc -l
 
 -----------------
 GRACE NOTES:
@@ -32,3 +34,20 @@ GRACE NOTES:
 %2$c - NL
 %3$s - code string
 %4$c - percent
+
+
+-----------------
+SULLY NOTES
+
+Enter creates a stack frame, and leave destroys a stack frame
+; enter
+push ebp
+mov ebp, esp
+
+; leave
+mov esp, ebp
+pop ebp
+
+; compile: db "nasm -f macho64 Sully_%1$d.s -o Sully_%1$d.o", 0
+; link:
+; execute: db "./Sully_%d", 0
