@@ -1,4 +1,5 @@
 GREEN=\033[1;32m
+RESET=\033[0m
 
 COLLEEN = Colleen
 GRACE = Grace
