@@ -13,6 +13,18 @@ Traditionally, these files have an .OBJ extension.
 
 {} Register rax is traditional the return
 
+rsp = the value in register rsp
+[rsp] = the value in memory at the address stored in rsp
+
+add rsp,8 ; move the stack pointer back (like pop)
+^ adding 8 to rsp, because 8 is the number of bytes in a 64-bit register
+
+child:              ; function, identified by a jump label
+	lea rdi, [rsp]
+	lea rsi, [rel filename]
+	mov rdx, i
+	call _asprintf
+
 -----------------
 
 nasm turns the .s file into a .o file, gcc turns the .o into a binary
@@ -27,6 +39,9 @@ nasm -f macho64 Grace.s; gcc Grace.o -o Grace; ./Grace; diff Grace.s Grace_kid.s
 RUN SULLY
 nasm -f macho64 Sully.s; gcc Sully.o -o Sully; ./Sully; ls -al | grep Sully | wc -l
 
+nasm -f macho64 Sully_%1$d.s; gcc Sully_%1$d.o -o Sully_%1$d; ./Sully_%1$d; ls -al | grep Sully | wc -l
+nasm -f macho64 Sully_%1$d.s -o Sully_%1$d.o && ld -o Sully_%1$d Sully_%1$d.o && rm Sully_%1$d.o && ./Sully_%1$d
+
 -----------------
 GRACE NOTES:
 
@@ -39,6 +54,11 @@ GRACE NOTES:
 -----------------
 SULLY NOTES
 
+%1$c - NL
+%2$c - QUOTES
+%3$s - code string
+%4$c - number
+
 Enter creates a stack frame, and leave destroys a stack frame
 ; enter
 push ebp
@@ -47,6 +67,8 @@ mov ebp, esp
 ; leave
 mov esp, ebp
 pop ebp
+
+The first parameter of enter specifies an amount of space to allocate for local variables
 
 ; compile: db "nasm -f macho64 Sully_%1$d.s -o Sully_%1$d.o", 0
 ; link:
