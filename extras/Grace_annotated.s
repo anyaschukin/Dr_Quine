@@ -28,7 +28,7 @@ open:                               ; "open" does nothing... it's just a style t
 ; duplicate boi
 write:
     mov rdi, rax                    ; move file descriptor into rdi
-	lea rsi, [rel code]             ; load code address into rdi
+	lea rsi, [rel code]             ; load code address into rsi
 	mov rdx, 34                     ; quotes
 	mov rcx, 10                     ; new line
 	lea r8, [rel code]              ; percentage

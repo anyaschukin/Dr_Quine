@@ -73,3 +73,7 @@ The first parameter of enter specifies an amount of space to allocate for local 
 ; compile: db "nasm -f macho64 Sully_%1$d.s -o Sully_%1$d.o", 0
 ; link:
 ; execute: db "./Sully_%d", 0
+
+------
+
+load up the arguments in order, then call _printf on them
