@@ -22,7 +22,7 @@ See the [subject](https://github.com/dfinnis/Dr_Quine/blob/master/subject.pdf) f
 
 Clone this repo.
 
-```git clone https://github.com/dfinnis/Dr_Quine.git```
+```git clone https://github.com/anyashuka/Dr_Quine.git```
 
 For *ASM/* you may need to install *nasm*.
 
