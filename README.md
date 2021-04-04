@@ -20,24 +20,19 @@ See the [subject](https://github.com/dfinnis/Dr_Quine/blob/master/subject.pdf) f
 
 ## Getting Started
 
-Clone this repo.
+Clone this repo. <br>
+```git clone https://github.com/dfinnis/Dr_Quine.git```
 
-```git clone https://github.com/anyashuka/Dr_Quine.git```
-
-For *ASM/* you may need to install *nasm*.
-
+For *ASM/* you may need to install *nasm*. <br>
 ```brew install nasm```
 
-In *C/* and *ASM/* first make the binaries.
-
+In *C/* and *ASM/* first make the binaries. <br>
 ```make```
 
-Then run the binaries.
-
+Then run the binaries. <br>
 ```./Colleen```, ```./Grace``` & ```./Sully```
 
-In *Python/* run files directly.
-
+In *Python/* run files directly. <br>
 ```python Colleen.py```, ```python Grace.py``` & ```python Sully.py```
 
 
